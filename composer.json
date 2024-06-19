@@ -1,0 +1,31 @@
+{
+    "name": "rakoitde/table",
+    "description": "CodeIgniter 4 Table Builder",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rakoitde\\Table\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kornberger, Ralf",
+            "email": "rakoitde@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "codeigniter4/devkit": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "scripts": {
+        "cs": [ "./vendor/bin/php-cs-fixer check --ansi --verbose --diff" ],
+        "cs-fix": [ "./vendor/bin/php-cs-fixer fix --ansi --verbose --diff" ]
+    }
+}
