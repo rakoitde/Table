@@ -6,7 +6,7 @@ namespace Rakoitde\Table\Traits;
 
 use stdClass;
 
-trait hasTHead
+trait HasTHead
 {
     public function tHead()
     {

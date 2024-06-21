@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Traits;
 
-trait hasBulkActions
+trait HasBulkActions
 {
     protected bool $has_bulk_actions = false;
     protected array $bulk_actions;

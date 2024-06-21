@@ -6,7 +6,7 @@ namespace Rakoitde\Table\Traits;
 
 use stdClass;
 
-trait hasTBody
+trait HasTBody
 {
     public function tBody()
     {

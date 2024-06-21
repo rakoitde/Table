@@ -51,10 +51,10 @@ trait hasValue
         $formatedValue = $this->formatValue($value);
 
         if ($this->hasUrl()) {
-            return $this->getUrlTag($formatedValue);
+            $formatedValue = $this->getUrlTag($formatedValue);
         }
 
-        return $formatedValue;
+        return $this->getIconTag('before') . $formatedValue . $this->getIconTag('after');
     }
 
     /**

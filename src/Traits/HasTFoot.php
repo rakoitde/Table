@@ -6,7 +6,7 @@ namespace Rakoitde\Table\Traits;
 
 use stdClass;
 
-trait hasTFoot
+trait HasTFoot
 {
     public function tFoot()
     {

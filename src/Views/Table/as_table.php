@@ -83,7 +83,8 @@
                 <td
                     class="<?= $Table->getId() ?>_column_<?= $column->getField() ?> <?= $column->getClasses('tbody') ?>"
                     <?= $column->getToggleHiddenAttribute() ?>
-                    ><?= $column->getValue() ?>
+                    >
+                    <?= $column->getValue() ?>
                 </td>
                 <?php endif ?>
                 <?php endforeach ?>

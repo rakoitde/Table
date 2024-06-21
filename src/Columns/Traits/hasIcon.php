@@ -4,12 +4,22 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Columns\Traits;
 
+use Rakoitde\Table\Enums\IconPosition;
+
 trait hasIcon
 {
     /**
      * bootstrap icon string without 'bi-'
      */
     protected string $icon = '';
+
+    /**
+     * icon position
+     *
+     * IconPosition::Before
+     * IconPosition::After
+     */
+    protected string $iconPosition = IconPosition::Before;
 
     /**
      * bootstrap icon string without 'bi-' for null value
@@ -76,6 +86,31 @@ trait hasIcon
     public function getIcon(): string
     {
         return 'bi bi-' . $this->icon;
+    }
+
+    /**
+     * get bootstrap icon string
+     *
+     * @param mixed $iconPosition
+     *
+     * @return string bootstrap icon string
+     */
+    public function getIconTag($iconPosition = IconPosition::Before): string
+    {
+        if (! isset($this->iconPosition) || $this->iconPosition !== $iconPosition) {
+            return '';
+        }
+
+        $iconColor = ($this->getIconColor() === '') ? '' : ' text-' . $this->getIconColor();
+
+        return view($this->icon_view, ['icon' => $this->getIcon() . $iconColor]);
+    }
+
+    public function iconPosition($iconPosition = IconPosition::Before): self
+    {
+        $this->iconPosition = $iconPosition;
+
+        return $this;
     }
 
     /**
