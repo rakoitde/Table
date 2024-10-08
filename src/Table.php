@@ -24,10 +24,6 @@ class Table
     use Traits\hasFilters;
     use Traits\hasSummaries;
     use Traits\hasHeading;
-
-    // use Traits\hasTHead;
-    // use Traits\hasTBody;
-    // use Traits\hasTFoot;
     use Traits\hasCaption;
     use Traits\hasModel;
     use Traits\hasName;
@@ -35,6 +31,7 @@ class Table
     use Traits\hasQuery;
     use Traits\hasPaginations;
     use Traits\hasExport;
+    use Traits\isSearchable;
 
     protected string $uri;
     protected IncomingRequest $request;
@@ -164,7 +161,7 @@ class Table
      */
     public function getFormId(): string
     {
-        return 'form_' . $this->id;
+        return 'form_' . $this->getId();
     }
 
     /**
@@ -287,8 +284,6 @@ class Table
 
         $this->sortModel();
 
-        $this->lastCompiledSelect = $this->model->builder->getCompiledSelect(false);
-
         if ($this->hasPagination() && ! $disablePagination) {
             $totalRows = $this->model->countAllResults(false);
 
@@ -302,6 +297,8 @@ class Table
             $this->entities = $this->model->findAll();
         }
 
+        $this->lastCompiledSelect = $this->model->builder->getCompiledSelect(false);
+
         return $this->entities;
     }
 
@@ -310,7 +307,7 @@ class Table
         d(
             // $this,
             // $this->getVisibleColumnArray(),
-            // $this->getColumns2(),
+            // $this->getColumns(),
             // $this->getColumns2(isVisible:true),
         );
     }
@@ -369,7 +366,7 @@ class Table
         $this->init();
 
         // set defaults
-        $this->template = config('Rakoitde\Table\Config\\' . $this->config->templatename);
+        #$this->template = config('Rakoitde\Table\Config\\' . $this->config->templatename);
 
         // set uri
         $this->uri(current_url(true)->getPath());
