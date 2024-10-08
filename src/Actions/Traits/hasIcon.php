@@ -11,7 +11,7 @@ trait hasIcon
 {
     protected string $icon;
     protected bool $hasIcon     = true;
-    protected bool $iconOnly    = true;
+    protected bool $iconOnly    = false;
     protected string $icon_view = 'Rakoitde\Table\Views\Actions\icon';
 
     public function icon(?string $icon = null): self
