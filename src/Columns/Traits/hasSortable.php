@@ -74,7 +74,7 @@ trait hasSortable
 
     public function getDirectionIcon(): string
     {
-        return $this->template->heading_cell_sorted_icon[$this->getDirection()];
+        return $this->config->sorted_icon[$this->getDirection()];
     }
 
     public function getDirectionQuery(): string

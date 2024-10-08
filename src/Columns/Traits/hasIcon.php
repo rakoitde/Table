@@ -29,12 +29,12 @@ trait hasIcon
     /**
      * bootstrap icon string without 'bi-' for true value
      */
-    protected string $trueIcon = 'check-lg';
+    protected string $trueIcon;
 
     /**
      * bootstrap icon string without 'bi-' for false value
      */
-    protected string $falseIcon = '';
+    protected string $falseIcon;
 
     /**
      * bootstrap text color string without 'text-'
@@ -130,7 +130,7 @@ trait hasIcon
      */
     public function getTrueIcon(): string
     {
-        return 'bi bi-' . $this->trueIcon;
+        return $this->config->iconPrefix . ($this->trueIcon ?? $this->config->column['trueIcon']);
     }
 
     /**
@@ -140,7 +140,7 @@ trait hasIcon
      */
     public function getFalseIcon(): string
     {
-        return 'bi bi-' . $this->falseIcon;
+        return $this->config->iconPrefix . ($this->falseIcon ?? $this->config->column['falseIcon']);
     }
 
     public function trueIcon(string $trueIcon): self

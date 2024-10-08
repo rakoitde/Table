@@ -64,7 +64,7 @@ trait hasBoolean
      */
     public function getNullColor(): string
     {
-        return $this->nullColor ?? $this->GetFalseColor();
+        return $this->nullColor ?? $this->getFalseColor();
     }
 
     /**
@@ -74,7 +74,7 @@ trait hasBoolean
      */
     public function getTrueColor(): string
     {
-        return $this->trueColor;
+        return $this->trueColor ?? $this->config->column['trueColor'];
     }
 
     /**
@@ -84,6 +84,6 @@ trait hasBoolean
      */
     public function getFalseColor(): string
     {
-        return $this->falseColor;
+        return $this->falseColor ?? $this->config->column['falseColor'];
     }
 }

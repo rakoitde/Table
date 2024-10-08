@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Columns\Traits;
 
+use CodeIgniter\I18n\Time;
+
 trait hasFormat
 {
     /**
@@ -112,6 +114,10 @@ trait hasFormat
     private function formatValue($value)
     {
         $value = match (true) {
+            // string and formattype in ['date','time','datetime']
+            is_string($value)
+                && in_array($this->formattype, ['date', 'time', 'datetime'], true) => (string) (new Time($value))->format($this->config->format[$this->formattype]),
+
             // string
             is_string($value) => $value,
 
