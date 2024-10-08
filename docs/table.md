@@ -144,7 +144,95 @@ use Rakoitde\Table\Columns\ColumnText;
                 ColumnText::make('name')
                     ->label('PostalCode')
                     ->numeric()
+                    ->nullValue('no Postal Code')
                     ->sortable(),
+            );
+    }
+```
+
+#### Add icon to column text
+
+```php
+use Rakoitde\Table\Table;
+use Rakoitde\Table\Columns\ColumnText;
+
+    public function table(): Table
+    {
+        return Table::make()
+            ->model(CompanyModel::class)
+            ->columns(
+                ColumnText::make('name')
+                    ->icon('building')
+                    ->iconPosition(IconPosition::Before)
+                    ->nullIcon('bi bi-ban')
+            );
+    }
+```
+
+#### Add classes to column header, text or footer
+
+```php
+use Rakoitde\Table\Table;
+use Rakoitde\Table\Columns\ColumnText;
+
+    public function table(): Table
+    {
+        return Table::make()
+            ->model(CompanyModel::class)
+            ->columns(
+                ColumnText::make('name')
+                    ->addClass('table-primary border border-1 border-bottom-0 border-dark', 'thead')
+                    ->addClasses([
+                        'text-center px-2',
+                        function (Entity $company) {
+                            return match ($company->type) {
+                                'Gesellschaft' => 'table-success text-nowrap',
+                                'Klinik' => ['table-warning', 'text-danger'],
+                                'Standort' => 'table-danger text-nowrap',
+                                default => null,
+                            };
+                        }
+                    ]
+            );
+    }
+```
+
+#### Add link to column text
+
+```php
+use Rakoitde\Table\Table;
+use Rakoitde\Table\Columns\ColumnText;
+
+    public function table(): Table
+    {
+        return Table::make()
+            ->model(CompanyModel::class)
+            ->columns(
+                ColumnText::make('url')
+                    ->url('https://{url}')
+                    ->openInNewTab()
+                    ->icon('globe')
+                    ->addClass('text-nowrap')
+            );
+    }
+```
+
+#### Set NULL value
+
+```php
+use Rakoitde\Table\Table;
+use Rakoitde\Table\Columns\ColumnText;
+
+    public function table(): Table
+    {
+        return Table::make()
+            ->model(CompanyModel::class)
+            ->columns(
+                ColumnText::make('url')
+                    ->url('https://{url}')
+                    ->openInNewTab()
+                    ->icon('globe')
+                    ->addClass('text-nowrap')
             );
     }
 ```
@@ -167,6 +255,7 @@ use Rakoitde\Table\Columns\ColumnIcon;
                     ->falseIcon('toggle-off')
                     ->trueColor('success')
                     ->falseColor('danger')
+                    ->nullColor('warning')
                     ->center(),
             );
     }
@@ -221,6 +310,37 @@ use Rakoitde\Table\Columns\ColumnText;
                     ->toggleable(isHiddenByDefault: true),
             );
     }
+```
+
+## Set column visability
+
+```php
+use Rakoitde\Table\Table;
+use Rakoitde\Table\Columns\ColumnText;
+
+    public function table(): Table
+    {
+        return Table::make()
+            ->model(CompanyModel::class)
+            ->columns(
+                ColumnText::make('name')
+                    ->visible(false),
+            );
+    }
+```
+
+## Add table pagination
+
+```php
+    public function table(): Table
+    {
+        return Table::make()
+            ->id('myTable')
+            ->model(CompanyModel::class)
+            ->paginated()
+            ->columns(...);
+    }
+
 ```
 
 ## Defining table actions
