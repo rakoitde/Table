@@ -81,45 +81,38 @@ class Pagination
     {
         if ($this->getCurrentPage() === 1) {
             return '
-			<li class="page-item disabled"><button class="page-link h-100"><i class="bi bi-chevron-bar-left align-middle"></i></button></li>
-			';
+            <li class="page-item disabled"><button class="page-link"><i class="bi bi-chevron-bar-left"></i></button></li>
+            ';
         }
 
         return '
-		<li class="page-item">
-			<button
-				type="submit"
-				class="page-link h-100"
-				name="' . $this->table->getName() . '[pager][page]' . '"
-				value="1"
-				form="' . $this->table->getFormId() . '"
-				><i class="bi bi-chevron-bar-left"></i>
-			</button>
-		</li>
-		';
+        <li class="page-item"><button
+                type="submit"
+                class="page-link"
+                name="' . $this->table->getName() . '[pager][page]' . '"
+                value="1"
+                form="' . $this->table->getFormId() . '"
+                ><i class="bi bi-chevron-bar-left"></i></button></li>
+        ';
     }
 
     public function getPreviousLink(): string
     {
         if ($this->getCurrentPage() === $this->getPreviousPage()) {
             return '
-			<li class="page-item disabled"><button class="page-link h-100"><i class="bi bi-chevron-double-left"></i></button></li>
-			';
+            <li class="page-item disabled"><button class="page-link"><i class="bi bi-chevron-double-left"></i></button></li>
+            ';
         }
 
         return '
-		<li class="page-item">
-			<button
-				type="submit"
-				class="page-link h-100"
-				name="' . $this->table->getName() . '[pager][page]' . '"
-				value="' . $this->getPreviousPage() . '"
-				form="' . $this->table->getFormId() . '"
-				>
-				<i class="bi bi-chevron-double-left"></i>
-			</button>
-		</li>
-		';
+        <li class="page-item"><button
+                type="submit"
+                class="page-link"
+                name="' . $this->table->getName() . '[pager][page]' . '"
+                value="' . $this->getPreviousPage() . '"
+                form="' . $this->table->getFormId() . '"
+                ><i class="bi bi-chevron-double-left"></i></button></li>
+        ';
     }
 
     public function getPageLinks()
@@ -146,61 +139,52 @@ class Pagination
         $active = ($this->getCurrentPage() === $page) ? ' active' : '';
 
         return '
-		<li class="page-item' . $active . '">
-			<button
-				type="submit"
-				class="page-link"
-				name="' . $this->table->getName() . '[pager][page]' . '"
-				value="' . $page . '"
-				form="' . $this->table->getFormId() . '"
-				>' . $page . '
-			</button>
-		</li>
-		';
+        <li class="page-item' . $active . '"><button
+                type="submit"
+                class="page-link"
+                name="' . $this->table->getName() . '[pager][page]' . '"
+                value="' . $page . '"
+                form="' . $this->table->getFormId() . '"
+                >' . $page . '</button></li>
+        ';
     }
 
     public function getNextPageLink(): string
     {
         if ($this->getCurrentPage() === $this->getNextPage()) {
             return '
-			<li class="page-item disabled"><button class="page-link h-100"><i class="bi bi-chevron-double-right"></i></button></li>
-			';
+            <li class="page-item disabled"><button class="page-link"><i class="bi bi-chevron-double-right"></i></button></li>
+            ';
         }
 
         return '
-			<li class="page-item">
-				<button
-					type="submit"
-					class="page-link h-100"
-					name="' . $this->table->getName() . '[pager][page]' . '"
-					value="' . $this->getNextPage() . '"
-					form="' . $this->table->getFormId() . '"
-					><i class="bi bi-chevron-double-right"></i>
-				</button>
-			</li>
-			';
+            <li class="page-item"><button
+                    type="submit"
+                    class="page-link"
+                    name="' . $this->table->getName() . '[pager][page]' . '"
+                    value="' . $this->getNextPage() . '"
+                    form="' . $this->table->getFormId() . '"
+                    ><i class="bi bi-chevron-double-right"></i></button></li>
+            ';
     }
 
     public function getLastLink(): string
     {
         if ($this->getCurrentPage() === $this->getTotalPages()) {
             return '
-			<li class="page-item disabled"><button class="page-link h-100"><i class="bi bi-chevron-bar-right"></i></button></li>
-			';
+            <li class="page-item disabled"><button class="page-link"><i class="bi bi-chevron-bar-right"></i></button></li>
+            ';
         }
 
         return '
-			<li class="page-item">
-				<button
-					type="submit"
-					class="page-link h-100"
-					name="' . $this->table->getName() . '[pager][page]' . '"
-					value="' . $this->getTotalPages() . '"
-					form="' . $this->table->getFormId() . '"
-					><i class="bi bi-chevron-bar-right"></i>
-				</button>
-			</li>
-			';
+            <li class="page-item"><button
+                    type="submit"
+                    class="page-link"
+                    name="' . $this->table->getName() . '[pager][page]' . '"
+                    value="' . $this->getTotalPages() . '"
+                    form="' . $this->table->getFormId() . '"
+                    ><i class="bi bi-chevron-bar-right"></i></button></li>
+            ';
     }
 
     public function start()
