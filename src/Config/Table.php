@@ -116,5 +116,14 @@ class Table
     /**
      * used template config
      */
-    public string $templatename = 'TemplateBS4';
+    public string $templatename_ = 'TemplateBS4';
+
+    public string $iconPrefix = 'bi bi-';
+
+    public array $column = [
+        'trueColor'   => 'success',
+        'falseColor'  => 'danger',
+        'trueIcon'    => 'check-lg',
+        'falseIcon'   => 'x-lg',
+    ];
 }
