@@ -20,7 +20,7 @@ trait hasExporter
         return $this;
     }
 
-    public function hasExporter(): string
+    public function hasExporter(): bool
     {
         return $this->has_exporter ?? false;
     }

@@ -17,7 +17,9 @@ trait hasActions
 
         foreach ($actions as $action) {
             $this->has_actions = true;
-            $this->actions[]   = $action->Options($options)->Url($this->getUri());
+            $this->actions[]   = $action
+                ->Options($options)
+                ->defaultUrl($this->getUri());
         }
 
         return $this;
