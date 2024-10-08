@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Rakoitde\Table\BulkActions;
 
 use App\Entities\CompanyEntity;
-use Rakoitde\Table\Actions\Enums\Color;
+use Rakoitde\Table\Enums\Color;
 use ReflectionFunction;
 
 /**
@@ -15,6 +15,7 @@ class BulkAction
 {
     use Traits\hasConfirmation;
     use Traits\hasIcon;
+    use Traits\hasColor;
     use Traits\hasOptions;
     use Traits\hasVisability;
 
@@ -24,7 +25,6 @@ class BulkAction
     protected string $text;
     protected string $view  = 'Rakoitde\Table\Views\BulkActions\button';
     protected string $class = 'btn';
-    protected string $color = Color::OutlinePrimary;
     protected string $size;
     protected string $url;
     protected string $uri;
@@ -142,7 +142,7 @@ class BulkAction
                 ' ',
                 array_merge(
                     explode(' ', $this->class ?? ''),
-                    explode(' ', $this->color ?? ''),
+                    explode(' ', $this->getColor('btn-') ?? ''),
                     explode(' ', $this->size ?? null),
                 )
             )
@@ -162,7 +162,7 @@ class BulkAction
             'name'    => $this->name,
             'href'    => $this->getHref(),
             'text'    => $this->getText(),
-            'color'   => 'btn-' . $this->color,
+            'color'   => $this->getColor('btn-'),
             'classes' => $this->getClasses(),
             'toggler' => $this->getConfirmationToggler(),
         ];

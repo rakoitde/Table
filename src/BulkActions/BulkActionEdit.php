@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\BulkActions;
 
-use Rakoitde\Table\Actions\Enums\Color;
+use Rakoitde\Table\Enums\Color;
 
 /**
  * This class describes a column.
