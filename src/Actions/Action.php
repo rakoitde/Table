@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Rakoitde\Table\Actions;
 
 use App\Entities\CompanyEntity;
-use Rakoitde\Table\Actions\Enums\Color;
 use ReflectionFunction;
 
 /**
@@ -15,8 +14,10 @@ class Action
 {
     use Traits\hasConfirmation;
     use Traits\hasIcon;
+    use Traits\hasUrl;
     use Traits\hasOptions;
     use Traits\hasVisability;
+    use Traits\hasColor;
 
     protected string $tag = 'a';
     protected string $id;
@@ -24,10 +25,7 @@ class Action
     protected string $text;
     protected string $view  = 'Rakoitde\Table\Views\Actions\button';
     protected string $class = 'btn';
-    protected string $color = Color::OutlinePrimary;
     protected string $size;
-    protected string $url;
-    protected string $uri;
     protected string $target;
     protected $row;
     protected array $rowArray;
@@ -35,8 +33,8 @@ class Action
 
     public function text(string $text): self
     {
-        $this->iconOnly = false;
         $this->text     = $text;
+        $this->iconOnly = false;
 
         return $this;
     }
@@ -64,21 +62,6 @@ class Action
         return $this;
     }
 
-    public function url(string $url): self
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    public function uri($uri): self
-    {
-        $this->uri = $uri;
-        $this->tag = 'a';
-
-        return $this;
-    }
-
     public function getParser()
     {
         return $this->parser ?? \Config\Services::parser();
@@ -97,16 +80,6 @@ class Action
         }
 
         return $text;
-    }
-
-    public function getUrl(string $suburi = ''): string
-    {
-        $url = $this->url ?? '';
-        $url .= str_ends_with($this->url ?? '', '/') || str_starts_with($this->uri ?? '', '/') ? '' : '/';
-        $url .= $this->parseText($this->uri ?? '');
-        $url .= $this->parseText($suburi);
-
-        return $url;
     }
 
     public function ___testFunction()
@@ -150,7 +123,7 @@ class Action
                 ' ',
                 array_merge(
                     explode(' ', $this->class ?? ''),
-                    explode(' ', $this->color ?? ''),
+                    explode(' ', $this->getColor('btn-') ?? ''),
                     explode(' ', $this->size ?? null),
                 )
             )
@@ -165,12 +138,13 @@ class Action
     public function getData(): array
     {
         return [
+            'action'  => $this,
             'tag'     => $this->tag,
             'id'      => $this->id,
             'name'    => $this->name,
             'href'    => $this->getHref(),
             'text'    => $this->getText(),
-            'color'   => 'btn-' . $this->color,
+            'color'   => $this->getColor('btn-'),
             'classes' => $this->getClasses(),
             'toggler' => $this->getConfirmationToggler(),
         ];
