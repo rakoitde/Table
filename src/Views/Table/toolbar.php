@@ -27,8 +27,11 @@
 
             <!-- Search -->
             <form id="form_<?= $Table->getId() ?>" class="d-flex" name="toolbar">
+
+                <?php if ($Table->isFiltered()) : ?>
                 <input class="form-control ms-2" type="search" name="<?= $Table->getSearchName() ?>" value="<?= $Table->getSearchString() ?>" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success ms-2" type="submit">Search</button>
+                <?php endif ?>
 
                 <!-- ToDo: add dynamic navigation actions -->
 

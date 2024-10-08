@@ -1,5 +1,5 @@
 <!-- Exporter -->
-<!-- ?php if ($Table->hasExporter()) : ? -->
+<?php if ($Table->hasExporter()) : ?>
 <div class="btn-group">
     <button class="btn btn-secondary dropdown-toggle" aria-label="Export data" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button" title="Export data" aria-expanded="false">
         <i class="bi bi-download"></i>
@@ -23,5 +23,5 @@
         </div>
     </div>
 </div>
-<!-- ?php endif ? -->
+<?php endif ?>
 

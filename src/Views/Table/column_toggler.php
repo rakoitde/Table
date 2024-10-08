@@ -51,7 +51,7 @@
                                         });
                                     }
 
-                                    let myTableColumns = document.getElementById('myTable_column_toggler').querySelectorAll('input[type=checkbox]')
+                                    let myTableColumns = document.getElementById('<?= $Table->getId() ?>_column_toggler').querySelectorAll('input[type=checkbox]')
                                     myTableColumns.forEach(function (toggler) {
                                         toggler.addEventListener('click', function() {
                                             toggleColumnVisability(toggler.dataset.column, this.checked)
