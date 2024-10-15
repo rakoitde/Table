@@ -3,7 +3,7 @@
     <div class="col-sm-8">
         <input type="search"
             class ="form-control form-control-sm"
-            id    ="<?= $filter->getId() ?>"
+            id="<?= $filter->getTableId() ?>_<?= $filter->getName() ?>"
             <?= $filter->getNameAttribute() ?>
             <?= $filter->getValueAttribute() ?>
             form  ="<?= $filter->getFormId() ?>">
