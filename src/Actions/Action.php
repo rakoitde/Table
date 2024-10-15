@@ -8,7 +8,7 @@ use App\Entities\CompanyEntity;
 use ReflectionFunction;
 
 /**
- * This class describes a column.
+ * This class describes an action.
  */
 class Action
 {
@@ -83,30 +83,6 @@ class Action
         }
 
         return $text;
-    }
-
-    public function ___testFunction()
-    {
-        if (is_callable($this->url)) {
-            $refFunction = new ReflectionFunction($this->url);
-            $parameters  = $refFunction->getParameters();
-
-            foreach ($parameters as $parameter) {
-                d($parameter, $parameter->getType(), $parameter->getType()->getName());
-            }
-
-            // d($refFunction, $parameters, $refFunction->getClosure());
-
-            $validParameters = [];
-
-            foreach ($parameters as $parameter) {
-                $validParameters[$parameter->getName()] = $this->row ?? new CompanyEntity();
-            }
-
-            $result = $refFunction->invoke(...$validParameters);
-
-            d($result->toArray());
-        }
     }
 
     public static function make(string $id)
