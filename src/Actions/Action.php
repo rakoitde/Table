@@ -45,7 +45,7 @@ class Action
             return $this->getIcon();
         }
 
-        return $this->getIcon() . $this->text ?? '';
+        return $this->getIcon() . $this->parseText($this->text ?? '');
     }
 
     public function row($row): self
@@ -69,14 +69,13 @@ class Action
 
     public function parseText(string $text): string
     {
-        if (! isset($this->row)) {
-            return $text;
-        }
-
         preg_match_all('/{{1}([^}]+)\}{1}/', $text, $matches);
 
         foreach ($matches[1] as $key) {
-            $text = str_replace('{' . $key . '}', $this->row->{$key} ?? '', $text);
+            if (isset($this->row)) {
+                $text = str_replace('{' . $key . '}', $this->row->{$key} ?? '', $text);
+            }
+            $text = str_replace('{' . $key . '}', dot_array_search($key, service('request')->getGet()) ?? '', $text);
         }
 
         return $text;
@@ -124,7 +123,7 @@ class Action
                 array_merge(
                     explode(' ', $this->class ?? ''),
                     explode(' ', $this->getColor('btn-') ?? ''),
-                    explode(' ', $this->size ?? null),
+                    explode(' ', $this->size ?? ''),
                 )
             )
         );
