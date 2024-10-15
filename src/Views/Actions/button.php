@@ -1,11 +1,11 @@
 <<?= $tag ?>
 	type="button"
-	<?= $href ?>
+	<?= $action->getHref() ?>
 	id="<?= $id ?>"
 	name="<?= $name ?>"
 	<?= $action->getTargetAttribute() ?>
-	class="btn <?= $classes ?> text-nowrap border-0"
+	class="<?= $classes ?> text-nowrap border-0"
 	<?= $toggler ?>
 >
-<?= $text ?>
+<?= $action->getText() ?>
 </<?= $tag ?>>
