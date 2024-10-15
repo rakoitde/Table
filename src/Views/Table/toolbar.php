@@ -28,12 +28,12 @@
             <!-- Search -->
             <form id="form_<?= $Table->getId() ?>" class="d-flex" name="toolbar">
 
-                <?php if ($Table->isFiltered()) : ?>
+                <?php if ($Table->isSearchable()) : ?>
+                <!-- ToDo: add config for placeholder and search fields -->
                 <input class="form-control ms-2" type="search" name="<?= $Table->getSearchName() ?>" value="<?= $Table->getSearchString() ?>" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success ms-2" type="submit">Search</button>
+                <button class="btn btn-success ms-2" type="submit"><i class="bi bi-search"></i></button>
                 <?php endif ?>
 
-                <!-- ToDo: add dynamic navigation actions -->
                 <?= $this->include('Rakoitde\Table\Views\Table\toolbar_actions') ?>
 
                 <div class="btn-group float-right ms-2">
