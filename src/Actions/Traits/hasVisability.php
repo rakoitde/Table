@@ -10,11 +10,6 @@ trait hasVisability
     protected bool $toggleable;
     protected bool $shown;
 
-    /**
-     * Sets the table formId
-     *
-     * @param string $formId The form attribute
-     */
     public function visible(bool $isVisible = true): self
     {
         $this->isVisible = $isVisible;

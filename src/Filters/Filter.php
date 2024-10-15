@@ -19,6 +19,7 @@ abstract class Filter
     use Traits\hasTableId;
     use Traits\hasValue;
     use Traits\hasQuery;
+    use Traits\hasVisability;
 
     protected string $view = 'Rakoitde\Table\Views\Filters\text';
     protected string $size;

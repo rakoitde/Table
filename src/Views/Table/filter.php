@@ -20,7 +20,9 @@
             <div><hr class="dropdown-divider"></div>
 
             <?php foreach($Table->getFilters() as $filter) : ?>
+            <?php if($filter->isVisible()) : ?>
             <?= $filter ?>
+            <?php endif ?>
             <?php endforeach ?>
 
             <div><hr class="dropdown-divider"></div>
