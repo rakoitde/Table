@@ -37,16 +37,6 @@ class Table
     protected IncomingRequest $request;
     protected array $entities;
 
-    // protected array $___values;
-
-    // protected array $___options;
-
-    // protected bool $___sortable;
-
-    // protected bool $___filterable;
-
-    // protected array $___filtervalues;
-
     protected bool $isSmall             = false;
     protected bool $hasSearchableFields = false;
 
