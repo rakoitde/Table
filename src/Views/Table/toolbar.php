@@ -34,6 +34,7 @@
                 <?php endif ?>
 
                 <!-- ToDo: add dynamic navigation actions -->
+                <?= $this->include('Rakoitde\Table\Views\Table\toolbar_actions') ?>
 
                 <div class="btn-group float-right ms-2">
 

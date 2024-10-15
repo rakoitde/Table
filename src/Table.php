@@ -30,6 +30,7 @@ class Table
     use Traits\hasRows;
     use Traits\hasQuery;
     use Traits\hasPaginations;
+    use Traits\hasToolbarActions;
     use Traits\hasExport;
     use Traits\isSearchable;
 
