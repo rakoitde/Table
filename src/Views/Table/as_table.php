@@ -1,4 +1,4 @@
-    <div class="overflow-auto">
+<div class="overflow-auto">
     <table class="<?= $Table->getClasses() ?>" id="<?= $Table->getId() ?>">
         <!-- THead -->
         <thead>
@@ -24,14 +24,14 @@
                     <input
                         type="hidden"
                         <?= $column->getNameAttribute() ?>
-                        form="form_myTable"
+                        form="form_<?= $Table->getId() ?>"
                         value="<?= $column->getDirection() ?>">
                     </input>
                     <button
                         class="border-0 bg-transparent text-decoration-underline fw-bold p-0"
                         type="submit"
                         <?= $column->getNameAttribute() ?>
-                        form="form_myTable"
+                        form="form_<?= $Table->getId() ?>"
                         value="<?= $column->getNextDirection() ?>">
                         <?= $column->getLabel() ?><?= $column->getDirectionIcon() ?>
                     </button>
