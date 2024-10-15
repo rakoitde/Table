@@ -10,7 +10,7 @@ namespace Rakoitde\Table\Actions\Traits;
 trait hasIcon
 {
     protected string $icon;
-    protected bool $hasIcon     = true;
+    protected bool $hasIcon     = false;
     protected bool $iconOnly    = false;
     protected string $icon_view = 'Rakoitde\Table\Views\Actions\icon';
 
@@ -20,6 +20,11 @@ trait hasIcon
         $this->icon    = $icon ?: $this->icon;
 
         return $this;
+    }
+
+    public function hasIcon(): bool
+    {
+        return $this->hasIcon;
     }
 
     public function iconOnly(?string $icon = null): self

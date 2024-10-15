@@ -45,6 +45,10 @@ class Action
             return $this->getIcon();
         }
 
+        if ($this->hasIcon()) {
+            return $this->getIcon() . '<span class="ms-2">' . $this->parseText($this->text ?? '') . '</span>';
+        }
+        
         return $this->getIcon() . $this->parseText($this->text ?? '');
     }
 
