@@ -13,5 +13,5 @@ class ActionEdit extends Action
 {
     protected string $color = Color::OutlinePrimary;
     protected string $icon  = 'pencil';
-    protected string $uri   = '{id}/edit';
+    protected string $uri   = '/{id}/edit';
 }

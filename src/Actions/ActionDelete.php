@@ -13,5 +13,5 @@ class ActionDelete extends Action
 {
     protected string $color = Color::OutlineDanger;
     protected string $icon  = 'trash';
-    protected string $uri   = '{id}/delete';
+    protected string $uri   = '/{id}/delete';
 }

@@ -13,5 +13,5 @@ class ActionShow extends Action
 {
     protected string $color = Color::OutlineSecondary;
     protected string $icon  = 'binoculars';
-    protected string $uri   = '{id}';
+    protected string $uri   = '/{id}';
 }
