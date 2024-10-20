@@ -7,7 +7,7 @@ namespace Rakoitde\Table\Actions\Traits;
 /**
  * This class describes a column.
  */
-trait hasUrl
+trait HasUrl
 {
 
     protected string $url;

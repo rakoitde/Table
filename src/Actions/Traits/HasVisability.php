@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Actions\Traits;
 
-trait hasVisability
+trait HasVisability
 {
     protected bool $isVisible = true;
     protected bool $toggleable;

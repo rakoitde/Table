@@ -7,7 +7,7 @@ namespace Rakoitde\Table\Actions\Traits;
 /**
  * This class describes a column.
  */
-trait hasConfirmation
+trait HasConfirmation
 {
     protected bool $requiresConfirmation = false;
     protected string $modalHeading;
