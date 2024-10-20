@@ -108,44 +108,6 @@ class Table
     }
 
     /**
-     * { function_description }
-     *
-     * @param array $options The options
-     *
-     * @return self   ( description_of_the_return_value )
-     */
-    public function ___Options(array $options): self
-    {
-        $this->options = $options;
-
-        return $this;
-    }
-
-    /**
-     * Mark all colums as sortable
-     *
-     * @param bool $sortable The sortable
-     */
-    public function ___Sort(bool $sortable = true): self
-    {
-        $this->sortable = $sortable;
-
-        return $this;
-    }
-
-    /**
-     * Mark all colums as filterable
-     *
-     * @param bool $filterable The filterable
-     */
-    public function ___Filter(bool $filterable = true): self
-    {
-        $this->filterable = $filterable;
-
-        return $this;
-    }
-
-    /**
      * Returns the form id for html elements
      *
      * @return string form id
