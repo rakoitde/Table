@@ -9,7 +9,7 @@ use Rakoitde\Table\Enums\Color;
 /**
  * This class describes a column.
  */
-trait hasColor
+trait HasColor
 {
 
     protected string $color = Color::OutlinePrimary;

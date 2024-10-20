@@ -13,11 +13,11 @@ use ReflectionFunction;
  */
 class BulkAction
 {
-    use Traits\hasConfirmation;
-    use Traits\hasIcon;
-    use Traits\hasColor;
-    use Traits\hasOptions;
-    use Traits\hasVisability;
+    use Traits\HasConfirmation;
+    use Traits\HasIcon;
+    use Traits\HasColor;
+    use Traits\HasOptions;
+    use Traits\HasVisability;
 
     protected string $tag = 'button';
     protected string $id;

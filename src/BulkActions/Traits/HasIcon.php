@@ -7,7 +7,7 @@ namespace Rakoitde\Table\BulkActions\Traits;
 /**
  * This class describes a column.
  */
-trait hasIcon
+trait HasIcon
 {
     protected string $icon;
     protected bool $hasIcon     = true;

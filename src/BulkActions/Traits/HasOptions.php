@@ -7,7 +7,7 @@ namespace Rakoitde\Table\BulkActions\Traits;
 /**
  * This class describes a column.
  */
-trait hasOptions
+trait HasOptions
 {
     protected array $options;
 
