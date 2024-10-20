@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Traits;
 
-trait hasName
+trait HasName
 {
     protected string $name = 'table';
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Traits;
 
-trait hasHeading
+trait HasHeading
 {
     protected string $heading;
     protected string $subheading;

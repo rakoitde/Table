@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Traits;
 
-trait hasId
+trait HasId
 {
     protected string $id;
 

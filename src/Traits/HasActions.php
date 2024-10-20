@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Traits;
 
-trait hasActions
+trait HasActions
 {
     protected bool $has_actions = false;
     protected array $actions;

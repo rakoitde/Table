@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Traits;
 
-trait hasConfig
+trait HasConfig
 {
     /**
      * the ci4table config

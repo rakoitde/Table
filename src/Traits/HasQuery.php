@@ -6,7 +6,7 @@ namespace Rakoitde\Table\Traits;
 
 use Closure;
 
-trait hasQuery
+trait HasQuery
 {
     protected $_query;
 

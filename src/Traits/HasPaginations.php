@@ -6,7 +6,7 @@ namespace Rakoitde\Table\Traits;
 
 use Rakoitde\Table\Pagination\Pagination;
 
-trait hasPaginations
+trait HasPaginations
 {
     protected int $perpage = 15;
     protected bool $paginated;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Traits;
 
-trait hasFilters
+trait HasFilters
 {
     protected bool $has_filters = false;
     protected array $filters;

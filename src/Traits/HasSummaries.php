@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Traits;
 
-trait hasSummaries
+trait HasSummaries
 {
     protected bool $has_summaries;
 

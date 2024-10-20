@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Traits;
 
-trait hasColumnSelector
+trait HasColumnSelector
 {
     protected bool $has_column_selector;
 
