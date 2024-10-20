@@ -9,8 +9,8 @@ namespace Rakoitde\Table\Columns;
  */
 class ColumnIcon extends Column
 {
-    use Traits\hasBoolean;
-    use Traits\hasIcon;
+    use Traits\HasBoolean;
+    use Traits\HasIcon;
 
     /**
      * Gets the value for icon columns.

@@ -9,5 +9,5 @@ namespace Rakoitde\Table\Columns;
  */
 class ColumnText extends Column
 {
-    use Traits\hasIcon;
+    use Traits\HasIcon;
 }
