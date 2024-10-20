@@ -6,7 +6,7 @@ namespace Rakoitde\Table\Columns\Traits;
 
 use Rakoitde\Table\Enums\IconPosition;
 
-trait hasIcon
+trait HasIcon
 {
     /**
      * bootstrap icon string without 'bi-'

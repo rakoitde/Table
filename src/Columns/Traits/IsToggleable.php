@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Columns\Traits;
 
-trait isToggleable
+trait IsToggleable
 {
     protected bool $isToggleable      = false;
     protected bool $isHiddenByDefault = false;

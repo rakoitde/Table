@@ -6,7 +6,7 @@ namespace Rakoitde\Table\Columns\Traits;
 
 use CodeIgniter\Entity\Entity;
 
-trait hasRow
+trait HasRow
 {
     /**
      * row

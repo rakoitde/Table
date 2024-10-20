@@ -12,26 +12,21 @@ use Rakoitde\Table\Traits as TableTraits;
  */
 abstract class Column
 {
-    use TableTraits\hasField;
-    use Traits\hasVisability;
-    use Traits\isToggleable;
-    use Traits\hasTable;
+    use TableTraits\HasField;
+    use Traits\HasVisability;
+    use Traits\HasTable;
     use Traits\HasSortable;
-    use Traits\hasFormat;
-    use Traits\hasLabel;
-    use Traits\hasValue;
-    use Traits\hasName;
-    use Traits\hasTableId;
-    use Traits\isSearchable;
-    use Traits\hasUrl;
-    use Traits\hasText;
-    use Traits\hasClasses;
-    use Traits\hasRow;
-
-    /**
-     * Field instance
-     */
-    protected Field $field;
+    use Traits\HasFormat;
+    use Traits\HasLabel;
+    use Traits\HasValue;
+    use Traits\HasName;
+    use Traits\HasTableId;
+    use Traits\HasUrl;
+    use Traits\HasText;
+    use Traits\HasClasses;
+    use Traits\HasRow;
+    use Traits\IsSearchable;
+    use Traits\IsToggleable;
 
     public static function make(?string $field = null)
     {

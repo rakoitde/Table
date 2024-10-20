@@ -7,7 +7,7 @@ namespace Rakoitde\Table\Columns\Traits;
 use Closure;
 use ReflectionFunction;
 
-trait hasClasses
+trait HasClasses
 {
     /**
      * array of classes

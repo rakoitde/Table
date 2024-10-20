@@ -6,7 +6,7 @@ namespace Rakoitde\Table\Columns\Traits;
 
 use CodeIgniter\I18n\Time;
 
-trait hasFormat
+trait HasFormat
 {
     /**
      * format type

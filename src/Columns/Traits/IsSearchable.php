@@ -6,24 +6,24 @@ namespace Rakoitde\Table\Columns\Traits;
 
 use Rakoitde\Table\Table;
 
-trait hasTable
+trait IsSearchable
 {
-    public Table $table;
+    public bool $isSearchable = false;
 
     /**
      * Sets the table formId
      *
      * @param string $formId The form attribute
      */
-    public function table(Table $table): self
+    public function searchable(bool $isSearchable = true): self
     {
-        $this->table = $table;
+        $this->isSearchable = $isSearchable;
 
         return $this;
     }
 
-    public function getTable(): Table
+    public function isSearchable(): bool
     {
-        return $this->table;
+        return $this->isSearchable;
     }
 }
