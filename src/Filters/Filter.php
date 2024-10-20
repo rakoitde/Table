@@ -11,15 +11,15 @@ use CodeIgniter\Model;
  */
 abstract class Filter
 {
-    use Traits\hasFilterOptions;
-    use Traits\hasId;
-    use Traits\hasName;
-    use Traits\hasLabel;
-    use Traits\hasFormId;
-    use Traits\hasTableId;
-    use Traits\hasValue;
-    use Traits\hasQuery;
-    use Traits\hasVisability;
+    use Traits\HasFilterOptions;
+    use Traits\HasId;
+    use Traits\HasName;
+    use Traits\HasLabel;
+    use Traits\HasFormId;
+    use Traits\HasTableId;
+    use Traits\HasValue;
+    use Traits\HasQuery;
+    use Traits\HasVisability;
 
     protected string $view = 'Rakoitde\Table\Views\Filters\text';
     protected string $size;

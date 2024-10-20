@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Filters\Traits;
 
-trait hasParser
+trait HasParser
 {
     protected string $parser;
 

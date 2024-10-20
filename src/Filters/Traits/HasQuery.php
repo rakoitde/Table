@@ -6,7 +6,7 @@ namespace Rakoitde\Table\Filters\Traits;
 
 use Closure;
 
-trait hasQuery
+trait HasQuery
 {
     public $_query;
 

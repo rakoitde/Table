@@ -7,7 +7,7 @@ namespace Rakoitde\Table\Filters\Traits;
 /**
  * This class describes a column.
  */
-trait hasFilterOptions
+trait HasFilterOptions
 {
     protected array $filterOptions;
 
