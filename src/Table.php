@@ -38,6 +38,7 @@ class Table
     protected IncomingRequest $request;
     protected array $entities;
 
+    protected string $lastCompiledSelect;
     protected bool $isSmall             = false;
     protected bool $hasSearchableFields = false;
 
