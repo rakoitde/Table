@@ -35,11 +35,15 @@ class Table
     use Traits\IsSearchable;
 
     protected string $uri;
+
     protected IncomingRequest $request;
+
     protected array $entities;
 
     protected string $lastCompiledSelect;
+
     protected bool $isSmall             = false;
+
     protected bool $hasSearchableFields = false;
 
     /**
