@@ -12,12 +12,12 @@ use ReflectionFunction;
  */
 class Action
 {
-    use Traits\hasConfirmation;
-    use Traits\hasIcon;
-    use Traits\hasUrl;
-    use Traits\hasOptions;
-    use Traits\hasVisability;
-    use Traits\hasColor;
+    use Traits\HasConfirmation;
+    use Traits\HasIcon;
+    use Traits\HasUrl;
+    use Traits\HasOptions;
+    use Traits\HasVisability;
+    use Traits\HasColor;
 
     protected string $tag = 'a';
     protected string $id;
