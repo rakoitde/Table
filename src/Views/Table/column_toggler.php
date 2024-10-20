@@ -43,42 +43,40 @@
                                 </div>
                             </div>
                         </div>
+                        <script>
+
+                            function toggleColumnVisability(columnClass, isShown) {
+                                let columns = document.getElementsByClassName(columnClass)
+                                Array.prototype.forEach.call(columns, function (column) {
+                                    if (isShown) {
+                                        column.removeAttribute('hidden')
+                                    } else {
+                                        column.setAttribute('hidden', true)
+                                    }
+                                });
+                            }
+
+                            let myTableColumns = document.getElementById('<?= $Table->getId() ?>_column_toggler').querySelectorAll('input[type=checkbox]')
+                            myTableColumns.forEach(function (toggler) {
+                                toggler.addEventListener('click', function() {
+                                    toggleColumnVisability(toggler.dataset.column, this.checked)
+                                });
+                            });
+
+                            function showAllToggleableColumns()
+                            {
+                                let columnCheckboxes = document.querySelectorAll("#<?= $Table->getId() ?>_toggler_toggleable_columns input[type=checkbox]");
+                                columnCheckboxes.forEach(function (checkbox) {
+                                    checkbox.checked = true;
+                                    toggleColumnVisability(checkbox.dataset.column, checkbox.checked)
+                                }, this);
+                            }
+
+                            document.getElementById('<?= $Table->getId().'_toggler_show_all_button' ?>').addEventListener("click", function(event){
+                                event.preventDefault()
+                                showAllToggleableColumns()
+                            });
+
+                        </script>
                     </div>
                     <?php endif ?>
-
-                    
-                    <script>
-
-                        function toggleColumnVisability(columnClass, isShown) {
-                            let columns = document.getElementsByClassName(columnClass)
-                            Array.prototype.forEach.call(columns, function (column) {
-                                if (isShown) {
-                                    column.removeAttribute('hidden')
-                                } else {
-                                    column.setAttribute('hidden', true)
-                                }
-                            });
-                        }
-
-                        let myTableColumns = document.getElementById('<?= $Table->getId() ?>_column_toggler').querySelectorAll('input[type=checkbox]')
-                        myTableColumns.forEach(function (toggler) {
-                            toggler.addEventListener('click', function() {
-                                toggleColumnVisability(toggler.dataset.column, this.checked)
-                            });
-                        });
-
-                        function showAllToggleableColumns()
-                        {
-                            let columnCheckboxes = document.querySelectorAll("#<?= $Table->getId() ?>_toggler_toggleable_columns input[type=checkbox]");
-                            columnCheckboxes.forEach(function (checkbox) {
-                                checkbox.checked = true;
-                                toggleColumnVisability(checkbox.dataset.column, checkbox.checked)
-                            }, this);
-                        }
-
-                        document.getElementById('<?= $Table->getId().'_toggler_show_all_button' ?>').addEventListener("click", function(event){
-                            event.preventDefault()
-                            showAllToggleableColumns()
-                        });
-
-                    </script>
