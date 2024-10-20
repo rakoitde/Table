@@ -12,11 +12,6 @@ trait IsSearchable
 
     private array $searchFields = [];
 
-    /**
-     * Sets the table formId
-     *
-     * @param string $formId The form attribute
-     */
     public function searchable(array $searchFields = []): self
     {
         $this->isSearchable = true;
