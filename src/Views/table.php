@@ -38,7 +38,6 @@ function handleSubmit() {
             acc[key] = value;
             return acc;
         }, {});
-    console.log(data);
 }
 handleSubmit();
 
