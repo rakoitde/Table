@@ -176,27 +176,31 @@ class Table
     public function searchModel()
     {
 
+        if (! $this->hasSearchableFields) { return; }
+
         $search = $this->getSearchString();
         if ($search == '') { return; }
 
-        if (! $this->hasSearchableFields) { return; }
+        $search = trim(str_replace("*", "%", $search));
+        $segments = preg_split("/[\s,]+|[.]+/", $search);
         
-        $this->model->groupStart();
+        foreach ($segments as $segment) {
 
-        foreach ($this->getColumns() as $column) {
+            $this->model->groupStart();
 
-            if (! $column->isSearchable()) { continue; }; 
+            foreach ($this->getColumns() as $column) {
 
-            foreach ($column->getSearchableFields() as $field) {
+                if (! $column->isSearchable()) { continue; }; 
+                
+                foreach ($column->getSearchableFields() as $field) {
 
-                $this->model->orLike($field, str_replace('*', '%', $search));
+                    $this->model->orLike($field, str_replace('*', '%', $segment));
 
+                }
             }
 
+            $this->model->groupEnd();
         }
-
-        $this->model->groupEnd();
-
     }
 
     /**
