@@ -48,20 +48,20 @@ abstract class Filter
 
     public function isFiltered(): bool
     {
-        return ! ($this->getValue() === '' || null === $this->getValue());
+        $value = $this->getValue();
+
+        if (!$this->getValue() || $this->getValue() === '' || null === $this->getValue()) { return false; }
+
+        if (is_array($value) && count($value)==1 && $value[0]=='')  return false; 
+
+        return true;
     }
 
     public function runQuery($query)
     {
-        $value = $this->getValue();
-
-        if (! $value) {
+        if (! $this->isFiltered()) {
             return;
         }
-
-        if (is_array($value) && count($value)==1 && $value[0]=='') {
-            return;
-        } 
 
         $_query = $this->getQuery();
 
