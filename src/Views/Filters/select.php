@@ -9,6 +9,9 @@
             <?= $filter->getNameAttribute(' ') ?>
             form="<?= $filter->getFormId() ?>">
             <!-- Options -->
+            <?php if (!$filter->hasMultiple()) : ?>
+            <option selected value></option>
+            <?php endif ?>
             <?php foreach ($filter->getOptionsAsArray($filter->getValue()) as $key => $option) : ?>
             <option value="<?= $key ?>" <?= $option['_selected'] ?>><?= $option['_text'] ?></option>
             <?php endforeach ?>

@@ -53,9 +53,15 @@ abstract class Filter
 
     public function runQuery($query)
     {
-        if (! $this->getValue()) {
+        $value = $this->getValue();
+
+        if (! $value) {
             return;
         }
+
+        if (is_array($value) && count($value)==1 && $value[0]=='') {
+            return;
+        } 
 
         $_query = $this->getQuery();
 
