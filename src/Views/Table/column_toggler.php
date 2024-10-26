@@ -29,12 +29,12 @@
                                                     type="checkbox"
                                                     data-field="<?= $column->getField() ?>"
                                                     <?= $column->getToggleCheckedAttribute() ?>
-                                                    name="table[<?= $Table->getId() ?>][toggle][<?= $column->getField() ?>]"
-                                                    id="<?= $Table->getId() ?>_toggler_<?= $column->getField() ?>"
+                                                    name="table[<?= $Table->getId() ?>][toggle][<?= $column->getName() ?>]"
+                                                    id="<?= $Table->getId() ?>_toggler_<?= $column->getName() ?>"
                                                     form="form_<?= $Table->getId() ?>"
                                                     value="1"
-                                                    data-column="<?= $Table->getId() ?>_column_<?= $column->getField() ?>">
-                                            <label class="form-check-label" for="<?= $Table->getId() ?>_toggler_<?= $column->getField() ?>">
+                                                    data-column="<?= $Table->getId() ?>_column_<?= $column->getName() ?>">
+                                            <label class="form-check-label" for="<?= $Table->getId() ?>_toggler_<?= $column->getName() ?>">
                                             <?= $column->getLabel() ?>
                                             </label>
                                         </div>

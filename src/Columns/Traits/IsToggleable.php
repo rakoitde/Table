@@ -61,7 +61,7 @@ trait IsToggleable
             'table',
             $this->table->getId(),
             'toggle',
-            $this->getField(),
+            $this->getName(),
         ];
 
         $dotPath = implode('.', $path);
