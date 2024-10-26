@@ -25,7 +25,7 @@ trait HasSortable
      * Mark column as sortable
      *
      * @param bool   $sortable  The sortable
-     * @param string $direction The direction
+     * @param string $sortdirectionByDefault The direction
      */
     public function sortable(bool $sortable = true, string $sortdirectionByDefault = ''): self
     {
