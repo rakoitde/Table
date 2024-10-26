@@ -35,15 +35,10 @@ class Table
     use Traits\IsSearchable;
 
     protected string $uri;
-
     protected IncomingRequest $request;
-
     protected array $entities;
-
     protected string $lastCompiledSelect;
-
     protected bool $isSmall             = false;
-
     protected bool $hasSearchableFields = false;
 
     /**
@@ -301,9 +296,6 @@ class Table
         $this->config(config('Table'));
 
         $this->init();
-
-        // set defaults
-        #$this->template = config('Rakoitde\Table\Config\\' . $this->config->templatename);
 
         // set uri
         $this->uri(current_url(true)->getPath());

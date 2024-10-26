@@ -6,19 +6,18 @@ namespace Rakoitde\Table\Traits;
 
 trait IsSearchable
 {
-	protected bool $isSearchable;
+    protected bool $isSearchable;
 
     public function isSearchable(): bool
     {
-
-        if (!$this->hasColumns()) { return false; }
+        if (! $this->hasColumns()) {
+            return false;
+        }
 
         foreach ($this->getColumns() as $column) {
-
             if ($column->isSearchable()) {
                 return true;
             }
-
         }
 
         return false;
@@ -29,27 +28,28 @@ trait IsSearchable
      */
     public function searchModel()
     {
-
-        if (! $this->hasSearchableFields) { return; }
+        if (! $this->hasSearchableFields) {
+            return;
+        }
 
         $search = $this->getSearchString();
-        if ($search == '') { return; }
+        if ($search === '') {
+            return;
+        }
 
-        $search = trim(str_replace("*", "%", $search));
-        $segments = preg_split("/[\s,]+|[.]+/", $search);
-        
+        $search   = trim(str_replace('*', '%', $search));
+        $segments = preg_split('/[\\s,]+|[.]+/', $search);
+
         foreach ($segments as $segment) {
-
             $this->model->groupStart();
 
             foreach ($this->getColumns() as $column) {
+                if (! $column->isSearchable()) {
+                    continue;
+                }
 
-                if (! $column->isSearchable()) { continue; }; 
-                
                 foreach ($column->getSearchableFields() as $field) {
-
                     $this->model->orLike($field, str_replace('*', '%', $segment));
-
                 }
             }
 

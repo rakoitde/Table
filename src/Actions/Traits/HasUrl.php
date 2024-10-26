@@ -9,11 +9,8 @@ namespace Rakoitde\Table\Actions\Traits;
  */
 trait HasUrl
 {
-
     protected string $url;
-
     protected string $defaultUrl;
-
     protected string $uri;
 
     /**
@@ -23,7 +20,9 @@ trait HasUrl
 
     /**
      * [url description]
-     * @param  string $url [description]
+     *
+     * @param string $url [description]
+     *
      * @return [type]      [description]
      */
     public function url(string $url): self
@@ -35,14 +34,16 @@ trait HasUrl
 
     /**
      * [getUrl description]
-     * @param  string $suburi [description]
+     *
+     * @param string $suburi [description]
+     *
      * @return [type]         [description]
      */
     public function getUrl(?string $suburi = null): string
     {
         $url = $this->url ?? $this->getDefaultUrl() ?? '';
         $url = $this->parseText($url);
-        #$url .= str_ends_with($this->url ?? '', '/') || str_starts_with($this->uri ?? '', '/') ? '' : '/';
+        // $url .= str_ends_with($this->url ?? '', '/') || str_starts_with($this->uri ?? '', '/') ? '' : '/';
         $url .= isset($this->uri) ? $this->parseText($this->uri) : '';
         $url .= $suburi ? '/' . $this->parseText($suburi) : '';
 
@@ -51,7 +52,9 @@ trait HasUrl
 
     /**
      * [defaultUrl description]
-     * @param  string $defaultUrl [description]
+     *
+     * @param string $defaultUrl [description]
+     *
      * @return [type]             [description]
      */
     public function defaultUrl(string $defaultUrl): self
@@ -63,6 +66,7 @@ trait HasUrl
 
     /**
      * [getDefaultUrl description]
+     *
      * @return [type] [description]
      */
     public function getDefaultUrl(): ?string
@@ -72,7 +76,9 @@ trait HasUrl
 
     /**
      * [uri description]
+     *
      * @param  [type] $uri [description]
+     *
      * @return [type]      [description]
      */
     public function uri($uri): self

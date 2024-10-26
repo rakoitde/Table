@@ -9,5 +9,4 @@ namespace Rakoitde\Table\Actions;
  */
 class ActionLink extends Action
 {
-
 }

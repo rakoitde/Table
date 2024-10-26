@@ -9,7 +9,7 @@
 
                                 <div class="d-flex justify-content-between">
                                     <span class="fs-6 fw-bold"><i class="bi bi-list-ul pe-2"></i>Spalten</span>
-                                    <span><button href="<?= base_url() ?>" class="btn btn-sm btn-link fw-bold text-danger text-decoration-none text-nowrap" id="<?= $Table->getId().'_toggler_show_all_button' ?>">alle anzeigen</b></span>
+                                    <span><button href="<?= base_url() ?>" class="btn btn-sm btn-link fw-bold text-danger text-decoration-none text-nowrap" id="<?= $Table->getId() . '_toggler_show_all_button' ?>">alle anzeigen</b></span>
                                 </div>
 
                                 <div><hr class="dropdown-divider"></div>
@@ -72,7 +72,7 @@
                                 }, this);
                             }
 
-                            document.getElementById('<?= $Table->getId().'_toggler_show_all_button' ?>').addEventListener("click", function(event){
+                            document.getElementById('<?= $Table->getId() . '_toggler_show_all_button' ?>').addEventListener("click", function(event){
                                 event.preventDefault()
                                 showAllToggleableColumns()
                             });

@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Rakoitde\Table\Actions;
 
-use App\Entities\CompanyEntity;
-use ReflectionFunction;
-
 /**
  * This class describes an action.
  */
@@ -48,7 +45,7 @@ class Action
         if ($this->hasIcon()) {
             return $this->getIcon() . '<span class="ms-2">' . $this->parseText($this->text ?? '') . '</span>';
         }
-        
+
         return $this->getIcon() . $this->parseText($this->text ?? '');
     }
 

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Rakoitde\Table\BulkActions;
 
 use App\Entities\CompanyEntity;
-use Rakoitde\Table\Enums\Color;
 use ReflectionFunction;
 
 /**

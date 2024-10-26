@@ -14,7 +14,7 @@
 
             <div class="d-flex justify-content-between">
                 <span class="fs-6 fw-bold"><i class="bi bi-funnel pe-2"></i>Filter</span>
-                <span><button class="btn btn-sm btn-link fw-bold text-danger text-decoration-none" id="<?= $Table->getId().'_filter_reset_button' ?>">reset</button></span>
+                <span><button class="btn btn-sm btn-link fw-bold text-danger text-decoration-none" id="<?= $Table->getId() . '_filter_reset_button' ?>">reset</button></span>
             </div>
 
             <div><hr class="dropdown-divider"></div>
@@ -40,16 +40,16 @@
         {
             var f = document.getElementById("form_<?= $Table->getId() ?>").elements;
             <?php foreach($Table->getFilters() as $filter) : ?>
-            filterField = f.<?= $Table->getId().'_'.$filter->getId() ?>;
+            filterField = f.<?= $Table->getId() . '_' . $filter->getId() ?>;
             if (filterField) {
-                filterField.value = "";            
+                filterField.value = "";
             } else {
-                f.<?= $Table->getId().'_'.$filter->getId() ?>_enabledanddisabled.checked = true;
+                f.<?= $Table->getId() . '_' . $filter->getId() ?>_enabledanddisabled.checked = true;
             }
             <?php endforeach ?>
         }
 
-        document.getElementById('<?= $Table->getId().'_filter_reset_button' ?>').addEventListener("click", function(event){
+        document.getElementById('<?= $Table->getId() . '_filter_reset_button' ?>').addEventListener("click", function(event){
             event.preventDefault()
             clearFilterFields()
         });

@@ -47,9 +47,7 @@ abstract class Column
      */
     public function __construct()
     {
-        $this->config   = Config('Rakoitde\\Table\\Config\\Table');
-        #$this->template = config('Rakoitde\\Table\\Config\\' . $this->config->templatename);
-
+        $this->config = Config('Rakoitde\\Table\\Config\\Table');
         $this->request = Services::request();
         $this->parser  = Services::parser();
     }

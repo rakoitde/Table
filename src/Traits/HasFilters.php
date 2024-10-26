@@ -54,8 +54,9 @@ trait HasFilters
 
     public function isFiltered(): bool
     {
-
-        if (!isset($this->filters)) { return false; }
+        if (! isset($this->filters)) {
+            return false;
+        }
 
         foreach ($this->filters as $filter) {
             if ($filter->isFiltered()) {

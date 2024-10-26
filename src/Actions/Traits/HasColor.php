@@ -11,12 +11,12 @@ use Rakoitde\Table\Enums\Color;
  */
 trait HasColor
 {
-
     protected string $color = Color::OutlinePrimary;
 
     public function color(string $color): self
     {
         $this->color = $color;
+
         return $this;
     }
 
@@ -24,5 +24,4 @@ trait HasColor
     {
         return $prefix . ($this->color ?? '');
     }
-
 }

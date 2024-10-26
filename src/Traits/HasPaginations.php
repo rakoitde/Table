@@ -14,7 +14,7 @@ trait HasPaginations
 
     public function paginated(bool $paginated = true): self
     {
-        $this->paginated  = $paginated;
+        $this->paginated = $paginated;
 
         if (! $paginated) {
             return $this;

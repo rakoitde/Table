@@ -9,7 +9,7 @@
             <?= $filter->getNameAttribute(' ') ?>
             form="<?= $filter->getFormId() ?>">
             <!-- Options -->
-            <?php if (!$filter->hasMultiple()) : ?>
+            <?php if (! $filter->hasMultiple()) : ?>
             <option selected value></option>
             <?php endif ?>
             <?php foreach ($filter->getOptionsAsArray($filter->getValue()) as $key => $option) : ?>

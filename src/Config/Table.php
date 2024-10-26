@@ -119,11 +119,10 @@ class Table
     public string $templatename_ = 'TemplateBS4';
 
     public string $iconPrefix = 'bi bi-';
-
-    public array $column = [
-        'trueColor'   => 'success',
-        'falseColor'  => 'danger',
-        'trueIcon'    => 'check-lg',
-        'falseIcon'   => 'x-lg',
+    public array $column      = [
+        'trueColor'  => 'success',
+        'falseColor' => 'danger',
+        'trueIcon'   => 'check-lg',
+        'falseIcon'  => 'x-lg',
     ];
 }
