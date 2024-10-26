@@ -27,7 +27,7 @@ trait HasName
 
     public function getNameAttribute(?string $subKey = null): string
     {
-        $sk = $subKey ? "[{$subKey}]" : '';
+        $sk = null === $subKey ? "[{$subKey}]" : '';
 
         return 'name="table[' . $this->getTable()->getId() . '][sort][' . $this->getName() . ']' . $sk . '"';
     }

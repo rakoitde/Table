@@ -22,6 +22,7 @@ trait HasId
 
     public function getId(): string
     {
+        // $this->model is Model
         return $this->id ?? $this->model->table;
     }
 }

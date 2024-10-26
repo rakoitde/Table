@@ -19,6 +19,7 @@ class Pagination
     protected int $currentPage;
     protected bool $showFirst = true;
     protected bool $showLast  = true;
+    protected array $sizes;
 
     public function setTotalRows($totalRows): self
     {

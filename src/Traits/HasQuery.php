@@ -13,7 +13,7 @@ trait HasQuery
     /**
      * Sets the table id
      *
-     * @param string $query The query
+     * @param Closure $query The query
      */
     public function query(Closure $query): self
     {
@@ -34,7 +34,7 @@ trait HasQuery
 
     public function runQuery($query)
     {
-        if (! $this->HasQuery()) {
+        if (! $this->hasQuery()) {
             return $query;
         }
         $_query = $this->_query;

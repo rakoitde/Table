@@ -8,6 +8,8 @@ use CodeIgniter\Model;
 
 /**
  * This class describes a column.
+ * 
+ * @phpstan-consistent-constructor
  */
 abstract class Filter
 {
@@ -28,8 +30,8 @@ abstract class Filter
     {
         $static = new static();
         $static->id($id);
-        $static->Name($id);
-        $static->Label(ucfirst($id));
+        $static->name($id);
+        $static->label(ucfirst($id));
 
         return $static;
     }
@@ -50,7 +52,7 @@ abstract class Filter
     {
         $value = $this->getValue();
 
-        if (! $this->getValue() || $this->getValue() === '' || null === $this->getValue()) {
+        if ($value === false || $value === '' || null === $value) {
             return false;
         }
 

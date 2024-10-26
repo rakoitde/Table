@@ -16,7 +16,7 @@ trait HasRow
     /**
      * Custom Row
      *
-     * @param string $row The row
+     * @param Entity $row The row
      */
     public function row(Entity $row): self
     {
@@ -28,7 +28,7 @@ trait HasRow
     /**
      * Gets the row.
      *
-     * @return string The row.
+     * @return Entity The row.
      */
     public function getRow(): Entity
     {

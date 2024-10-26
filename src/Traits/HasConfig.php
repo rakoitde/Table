@@ -16,7 +16,6 @@ trait HasConfig
     /**
      * Sets the config
      *
-     * @param string $formId The form attribute
      * @param mixed  $config
      */
     public function config($config): self

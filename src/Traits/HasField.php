@@ -32,6 +32,6 @@ trait HasField
     {
         $fieldname = str_contains($this->fieldname, '.') ? explode('.', $this->fieldname)[1] : $this->fieldname;
 
-        return $fieldname ?? '';
+        return $fieldname;
     }
 }

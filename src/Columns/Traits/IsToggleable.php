@@ -9,11 +9,6 @@ trait IsToggleable
     protected bool $isToggleable      = false;
     protected bool $isHiddenByDefault = false;
 
-    /**
-     * Sets the table formId
-     *
-     * @param string $formId The form attribute
-     */
     public function toggleable(bool $isToggleable = true, bool $isHiddenByDefault = false): self
     {
         $this->isToggleable      = $isToggleable;

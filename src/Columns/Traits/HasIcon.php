@@ -65,7 +65,7 @@ trait HasIcon
     /**
      * set bootstrap icon string for null value
      *
-     * @param string $nullIcon bootstrap icon string without bi and bi-
+     * @param string $icon bootstrap icon string without bi and bi-
      */
     public function nullIcon(string $icon): self
     {

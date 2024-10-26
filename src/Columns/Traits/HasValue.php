@@ -6,6 +6,7 @@ namespace Rakoitde\Table\Columns\Traits;
 
 trait HasValue
 {
+    use HasIcon;
     /**
      * label
      */
@@ -46,7 +47,7 @@ trait HasValue
 
         $fieldname = $this->getFieldname();
 
-        $value = $this->GetRow()->{$fieldname};
+        $value = $this->getRow()->{$fieldname};
 
         $formatedValue = $this->formatValue($value);
 
@@ -60,7 +61,7 @@ trait HasValue
     /**
      * Custom Value
      *
-     * @param string $value The label
+     * @param string $nullValue The label
      */
     public function nullValue(string $nullValue): self
     {
@@ -82,7 +83,7 @@ trait HasValue
     /**
      * set true text color for null value
      *
-     * @param string $trueColor 'success' for class text-success
+     * @param string $nullColor 'success' for class text-success
      */
     public function nullColor(string $nullColor): self
     {

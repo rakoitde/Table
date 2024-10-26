@@ -43,8 +43,6 @@ trait HasUrl
     /**
      * Gets the url.
      *
-     * @param      <type>  $row    The row
-     *
      * @return string The url.
      */
     public function getUrl(): string

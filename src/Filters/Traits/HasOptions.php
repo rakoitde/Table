@@ -45,7 +45,7 @@ trait HasOptions
             $options[$option[$this->options_key]] = $option;
         }
 
-        return $options ?? [];
+        return $options;
     }
 
     public function hasOptions()

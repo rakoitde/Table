@@ -9,11 +9,6 @@ trait HasHeading
     protected string $heading;
     protected string $subheading;
 
-    /**
-     * Sets the table id
-     *
-     * @param string $id The identifier
-     */
     public function heading(string $heading): self
     {
         $this->heading = $heading;
@@ -31,11 +26,6 @@ trait HasHeading
         return isset($this->heading);
     }
 
-    /**
-     * Sets the table id
-     *
-     * @param string $id The identifier
-     */
     public function subheading(string $subheading): self
     {
         $this->subheading = $subheading;

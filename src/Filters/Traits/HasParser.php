@@ -6,12 +6,12 @@ namespace Rakoitde\Table\Filters\Traits;
 
 trait HasParser
 {
-    protected string $parser;
+    // protected string $parser;
 
-    public function getParser()
-    {
-        return $this->parser ?? \Config\Services::parser();
-    }
+    // public function getParser()
+    // {
+    //     return $this->parser ?? \Config\Services::parser();
+    // }
 
     public function parseText(string $text, $data): string
     {

@@ -9,11 +9,6 @@ trait HasMultiple
     protected bool $multiple       = false;
     protected string $multipleSize = '5';
 
-    /**
-     * Sets the table id
-     *
-     * @param string $id The identifier
-     */
     public function multiple(int $multipleSize = 5): self
     {
         $this->multiple     = true;
@@ -34,11 +29,11 @@ trait HasMultiple
 
     public function getMultipleAttribute(): string
     {
-        return $this->HasMultiple() ? 'multiple' : '';
+        return $this->hasMultiple() ? 'multiple' : '';
     }
 
     public function getMultipleSizeAttribute(): string
     {
-        return $this->HasMultiple() ? 'size="' . $this->multipleSize . '"' : '';
+        return $this->hasMultiple() ? 'size="' . $this->multipleSize . '"' : '';
     }
 }

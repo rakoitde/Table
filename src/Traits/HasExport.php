@@ -8,9 +8,6 @@ trait HasExport
 {
     /**
      * CSV Eport
-     *
-     * @param      <type>  $result   The result
-     * @param      <type>  $headers  The headers
      */
     public function exportCsv()
     {

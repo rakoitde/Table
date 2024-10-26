@@ -37,6 +37,6 @@ trait HasPaginations
 
     public function pagination(): string
     {
-        return (string) $this->pagination ?? '';
+        return (string) $this->pagination;
     }
 }

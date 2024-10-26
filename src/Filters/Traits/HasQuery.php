@@ -11,9 +11,9 @@ trait HasQuery
     public $_query;
 
     /**
-     * Sets the table id
+     * Sets a query
      *
-     * @param string $query The query
+     * @param Closure $Closure The query
      */
     public function query(Closure $query): self
     {
