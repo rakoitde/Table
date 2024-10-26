@@ -113,11 +113,6 @@ class Table
         'icon'   => 'Rakoitde\Table\Views\Actions\icon',
     ];
 
-    /**
-     * used template config
-     */
-    public string $templatename_ = 'TemplateBS4';
-
     public string $iconPrefix = 'bi bi-';
     public array $column      = [
         'trueColor'  => 'success',
