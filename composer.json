@@ -17,7 +17,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "codeigniter4/devkit": "^1.2"
+        "codeigniter4/devkit": "^1.2",
+        "codeigniter4/framework": ">=4.3.5 <4.5.0 || ^4.5.1",
+        "phpstan/phpstan-strict-rules": "^1.6"
     },
     "config": {
         "allow-plugins": {
@@ -25,7 +27,21 @@
         }
     },
     "scripts": {
-        "cs": [ "./vendor/bin/php-cs-fixer check --ansi --verbose --diff" ],
-        "cs-fix": [ "./vendor/bin/php-cs-fixer fix --ansi --verbose --diff" ]
+        "cs": [ "./vendor/bin/php-cs-fixer check --ansi --verbose --dry-run --diff" ],
+        "cs-fix": [ "./vendor/bin/php-cs-fixer fix --ansi --verbose --diff" ],
+        "analyze": [
+            "phpstan analyze",
+            "psalm",
+            "rector process --dry-run"
+        ],
+        "ci": [
+            "Composer\\Config::disableProcessTimeout",
+            "@cs",
+            "@analyze",
+            "@test"
+        ],
+        "sa": "@analyze",
+        "style": "@cs-fix",
+        "test": "phpunit"
     }
 }
