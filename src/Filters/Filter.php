@@ -50,11 +50,11 @@ abstract class Filter
     {
         $value = $this->getValue();
 
-        if (!$this->getValue() || $this->getValue() === '' || null === $this->getValue()) { return false; }
+        if (! $this->getValue() || $this->getValue() === '' || null === $this->getValue()) {
+            return false;
+        }
 
-        if (is_array($value) && count($value)==1 && $value[0]=='')  return false; 
-
-        return true;
+        return ! (is_array($value) && count($value) === 1 && $value[0] === '');
     }
 
     public function runQuery($query)
