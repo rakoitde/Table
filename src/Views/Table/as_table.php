@@ -17,7 +17,7 @@
             <?php foreach ($Table->getColumns() as $column) : ?>
                 <?php if($column->isVisible()) : ?>
                 <th
-                    class="text-nowrap <?= $Table->getId() ?>_column_<?= $column->getField() ?> <?= $column->getClasses('thead') ?>"
+                    class="text-nowrap <?= $Table->getId() ?>_column_<?= $column->getName() ?> <?= $column->getClasses('thead') ?>"
                     <?= $column->getToggleHiddenAttribute() ?>
                     >
                 <?php if($column->isSortable()) : ?>
@@ -81,7 +81,7 @@
                 <?php $column->Row($row) ?>
                 <?php if($column->isVisible()) : ?>
                 <td
-                    class="<?= $Table->getId() ?>_column_<?= $column->getField() ?> <?= $column->getClasses('tbody') ?>"
+                    class="<?= $Table->getId() ?>_column_<?= $column->getName() ?> <?= $column->getClasses('tbody') ?>"
                     <?= $column->getToggleHiddenAttribute() ?>
                     >
                     <?= $column->getValue() ?>
